@@ -78,6 +78,10 @@
                                  proxy
                                  (retry-times 2)
                                  (retry-interval 5))
+  "Get JWKs from ISSUER, or nil
+
+CACHED-KEYS --- an openid-keys for previous returned value, or nil.
+PROXY --- a string for HTTP request proxy uri, or nil."
   (declare (type (or openid-keys null) cached-keys))
   (cond
     ((and (typep cached-keys 'openid-keys)
@@ -107,6 +111,7 @@
        (condition ())))))
 
 (defun find-openid-key (kid keys)
+  "Find key by key id from keys, or nil"
   (declare (type openid-keys keys))
   (let ((key (find-if (lambda (key)
                         (equal kid (openid-key-kid key)))
