@@ -1,6 +1,6 @@
 # Openid-Key
 
-You can get public key of OpenID Connect id-token.
+You can get public key of OpenID Connect [id-token][id-token].
 Then, you can verify id-token with the key.
 
 OpedID Key format has defined in [JSON Web Key (JWK)][JWK].
@@ -28,10 +28,11 @@ CL-USER> (openid-key:find-openid-key "8289d54280b76712de41cd2ef95972b123be9ac0" 
 "RSA"
 ```
 
-You may also be interested in [Jose][Jose].
+You may also be interested in [Jose][Jose] for verify [id-token][id-token].
 
 ## Installation
 
 
 [Jose]: http://quickdocs.org/jose/
 [JWK]: https://tools.ietf.org/html/rfc7517
+[id-token]: https://openid.net/specs/openid-connect-core-1_0.html
