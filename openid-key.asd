@@ -16,7 +16,7 @@
   :components ((:module "src"
                 :components
                 ((:file "openid-key"))))
-  :description ""
+  :description "Get OpenID keys from issuer."
   :long-description
   #.(read-file-string
      (subpathname *load-pathname* "README.markdown"))
