@@ -28,6 +28,7 @@ CL-USER> (openid-key:find-openid-key "8289d54280b76712de41cd2ef95972b123be9ac0" 
 #<IRONCLAD::RSA-PUBLIC-KEY {1001B512E3}>
 "RS256"
 "RSA"
+"sig"
 ```
 
 You may also be interested in [Jose][Jose] for verify [id-token][id-token].
