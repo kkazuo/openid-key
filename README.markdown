@@ -1,7 +1,7 @@
 # Openid-Key
 
 You can get public key of OpenID Connect id-token.
-Then, you can verify id-token with tha key.
+Then, you can verify id-token with the key.
 
 ## Usage
 
