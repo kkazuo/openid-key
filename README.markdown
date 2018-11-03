@@ -3,6 +3,8 @@
 You can get public key of OpenID Connect id-token.
 Then, you can verify id-token with the key.
 
+OpedID Key format has defined in [JSON Web Key (JWK)][JWK].
+
 ## Usage
 
 ```
@@ -32,3 +34,4 @@ You may also be interested in [Jose][Jose].
 
 
 [Jose]: http://quickdocs.org/jose/
+[JWK]: https://tools.ietf.org/html/rfc7517
