@@ -1,6 +1,7 @@
 (defpackage openid-key
   (:use :cl)
   (:export
+   :openid-keys
    :get-openid-keys
    :find-openid-key))
 (in-package :openid-key)
@@ -113,4 +114,5 @@
     (when key
       (values (openid-key-key key)
               (openid-key-alg key)
-              (openid-key-kty key)))))
+              (openid-key-kty key)
+              (openid-key-use key)))))
