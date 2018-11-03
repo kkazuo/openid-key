@@ -7,6 +7,7 @@
 
 (defstruct openid-key
   kty
+  use
   alg
   kid
   key)
@@ -48,16 +49,19 @@
   (when (equal "RSA" (cdr (assoc "kty" jwk :test 'equal)))
     (let ((alg (cdr (assoc "alg" jwk :test 'equal)))
           (kid (cdr (assoc "kid" jwk :test 'equal)))
+          (use (cdr (assoc "use" jwk :test 'equal)))
           (n (cdr (assoc "n" jwk :test 'equal)))
           (e (cdr (assoc "e" jwk :test 'equal))))
       (when (and (stringp alg)
                  (stringp kid)
+                 (stringp use)
                  (stringp n)
                  (stringp e))
         (list
          (make-openid-key
           :kid kid
           :kty "RSA"
+          :use use
           :alg alg
           :key (ironclad:make-public-key :RSA
                                          :n (b64-integer n)

@@ -14,11 +14,13 @@ CL-USER> (setf *keys* (openid-key:get-openid-keys "https://accounts.google.com")
    :JWKS-EXPIRES @2018-11-03T20:03:46.000000+09:00
    :KEYS (#S(OPENID-KEY::OPENID-KEY
              :KTY "RSA"
+             :USE "sig"
              :ALG "RS256"
              :KID "8289d54280b76712de41cd2ef95972b123be9ac0"
              :KEY #<IRONCLAD::RSA-PUBLIC-KEY {1001EE03A3}>)
           #S(OPENID-KEY::OPENID-KEY
              :KTY "RSA"
+             :USE "sig"
              :ALG "RS256"
              :KID "aa436c3f63b281ce0d976da0b51a34860ff960eb"
              :KEY #<IRONCLAD::RSA-PUBLIC-KEY {1001F40433}>)))
