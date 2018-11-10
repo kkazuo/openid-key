@@ -33,18 +33,9 @@
         (setf (quri:uri-path config) well-known))
     config))
 
-(defun padding (s)
-  (let ((p (- 4 (rem (length s) 4))))
-    (case p
-      ((1) (concatenate 'string s "="))
-      ((2) (concatenate 'string s "=="))
-      ((3) (concatenate 'string s "==="))
-      (otherwise s))))
-
 (defun b64-integer (s)
-  (let* ((b (qbase64:decode-string (padding s) :scheme :uri))
-         (v (make-array (length b) :element-type '(unsigned-byte 8) :initial-contents b)))
-    (ironclad:octets-to-integer v)))
+  (ironclad:octets-to-integer
+   (base64:base64-string-to-usb8-array s :uri t)))
 
 (defun jwk-key (jwk)
   (when (equal "RSA" (cdr (assoc "kty" jwk :test 'equal)))

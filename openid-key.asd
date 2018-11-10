@@ -3,14 +3,14 @@
 |#
 
 (defsystem "openid-key"
-  :version "0.1.0"
+  :version "0.1.1"
   :author "Koga Kazuo"
   :license "MIT"
-  :depends-on ("dexador"
+  :depends-on ("cl-base64"
+               "dexador"
                "ironclad"
                "jonathan"
                "local-time"
-               "qbase64"
                "quri"
                "trivial-rfc-1123")
   :components ((:module "src"
